@@ -5,12 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './Components/navigation/navigation.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
+
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { UserComponent } from './Components/user/user.component';
@@ -19,6 +14,9 @@ import { TicketComponent } from './Components/ticket/ticket.component';
 import { ScheduleComponent } from './Components/schedule/schedule.component';
 import { MedsComponent } from './Components/meds/meds.component';
 import { NavTabComponent } from './Components/nav-tab/nav-tab.component';
+import { MaterialModule } from 'material.module';
+
+
 
 @NgModule({
   declarations: [
@@ -37,12 +35,7 @@ import { NavTabComponent } from './Components/nav-tab/nav-tab.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
