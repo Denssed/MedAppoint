@@ -12,13 +12,6 @@ export class NavTabComponent {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-
     this.currentRoute = this.route.snapshot.url[0].path
-
-    // this.route.url.subscribe(([url]) => {
-    //   const { path, parameters } = url;
-    //   console.log(path);
-    //   console.log(parameters);
-    // });
   }
 }
