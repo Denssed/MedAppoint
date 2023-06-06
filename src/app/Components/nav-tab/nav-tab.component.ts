@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './nav-tab.component.html',
   styleUrls: ['./nav-tab.component.css'],
 })
-export class NavTabComponent {
+export class NavTabComponent implements OnInit {
   currentRoute: string | undefined;
 
   constructor(private route: ActivatedRoute) {}
