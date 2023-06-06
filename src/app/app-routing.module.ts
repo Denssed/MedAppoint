@@ -7,23 +7,27 @@ import { AppoimentComponent } from './Components/appoiment/appoiment.component';
 import { TicketComponent } from './Components/ticket/ticket.component';
 import { ScheduleComponent } from './Components/schedule/schedule.component';
 import { MedsComponent } from './Components/meds/meds.component';
+import { NavigationComponent } from './Components/navigation/navigation.component';
 
 const routes: Routes = [
   //General
-  {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
+  { path: 'login', component: LoginComponent },
   //User
-  {path: 'user', component: UserComponent},
-  {path: 'appoiment', component: AppoimentComponent},
-  {path: 'ticket', component: TicketComponent},
-  //Meds
-  {path: 'schedule', component: ScheduleComponent},
-  //Admin
-  {path: 'doctors', component: MedsComponent},
+  {
+    path: '',
+    component: NavigationComponent,
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'user', component: UserComponent },
+      { path: 'user', component: UserComponent },
+      { path: 'appoiment', component: AppoimentComponent },
+      { path: 'ticket', component: TicketComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
