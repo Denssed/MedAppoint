@@ -1,1 +1,41 @@
-<app-nav-tab></app-nav-tab>
+<div>
+    <h1>Medicos</h1>
+    <p>Seleccionado: {{radioButtonSeleccionado}}</p>
+    <p>Total de personas: {{obtenerTotalPersonas()}}</p>
+    <p>Total activos: {{obtenerTotalActivo()}}</p>
+    <p>Total inactivos: {{obtenerTotalInactivo()}}</p>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cédula</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+          <th>Género</th>
+          <th>Dirección</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Estado</th>
+          <th>Especialización</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medico of listMedico">
+          <td>{{medico.id}}</td>
+          <td>{{medico.cedula}}</td>
+          <td>{{medico.nombre}}</td>
+          <td>{{medico.apellido}}</td>
+          <td>{{medico.edad}}</td>
+          <td>{{medico.genero}}</td>
+          <td>{{medico.direccion}}</td>
+          <td>{{medico.email}}</td>
+          <td>{{medico.telefono}}</td>
+          <td>{{medico.estado ? 'Activo' : 'Inactivo'}}</td>
+          <td>{{medico.especializacion}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
