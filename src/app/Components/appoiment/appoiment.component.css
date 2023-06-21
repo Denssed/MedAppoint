@@ -1,0 +1,17 @@
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+.speciality-section {
+  margin-top: 20px;
+}
+
+.schedule {
+  display: flex;
+  flex-direction: row;
+  text-align: center
+}

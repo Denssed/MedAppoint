@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {  FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { ScheduleComponent } from './Components/schedule/schedule.component';
 import { MedsComponent } from './Components/meds/meds.component';
 import { NavTabComponent } from './Components/nav-tab/nav-tab.component';
 import { MaterialModule } from 'material.module';
+import { InputButtonComponent } from './Components/appoiment/speciality-card/input-button.component';
 
 
 
@@ -29,13 +31,16 @@ import { MaterialModule } from 'material.module';
     TicketComponent,
     ScheduleComponent,
     MedsComponent,
-    NavTabComponent
+    NavTabComponent,
+    InputButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

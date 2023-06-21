@@ -1,0 +1,7 @@
+<button mat-flat-button matStepperNext class="speciality-card">
+  <p>
+    <span>{{data!.name | titlecase}} </span>
+    <span>{{data!.surName | titlecase}}</span>
+  </p>
+  <span *ngIf="data!.cost">Valor de servicio: {{data!.cost}}</span>
+</button>
