@@ -1,1 +1,55 @@
-<app-nav-tab></app-nav-tab>
+<div class="container">
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step label="speciality">
+      <div class="speciality-section">
+        <app-input-button
+          *ngFor="let speciality of speciality_mock"
+          (click)="getSpeciality(speciality)"
+          [data]="speciality"
+        >
+        </app-input-button>
+      </div>
+    </mat-step>
+    <mat-step label="med">
+      <div class="speciality-section">
+        <app-input-button
+          *ngFor="let med of meds_mock"
+          (click)="getMed(med)"
+          [data]="med"
+        >
+        </app-input-button>
+      </div>
+    </mat-step>
+    <mat-step label="schedule">
+      <div class="speciality-section schedule">
+        <div *ngFor="let day of week">
+          <h2>{{ day.name | titlecase }}</h2>
+          <app-input-button
+            *ngFor="let hour of hour_mock"
+            (click)="getschedule(day.number, hour)"
+            [data]="hour"
+          >
+          </app-input-button>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <div class="speciality-section">
+        <p>Display Info</p>
+        <p>
+          Id Medico: {{ appoiment!.medId }}
+        </p>
+        <p>
+          Costo de consulta: {{ appoiment!.cost }}
+        </p>
+        <p>
+          Fecha de consulta: {{ date!.date }}
+        </p>
+      </div>
+      <div>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
