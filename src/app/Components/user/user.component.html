@@ -1,1 +1,23 @@
-<app-nav-tab></app-nav-tab>
+<div class="container">
+  <div class="box">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput value="" [(ngModel)]="patient.name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>SurName</mat-label>
+      <input type="text" matInput value="" [(ngModel)]="patient.surName">
+    </mat-form-field>
+    <button mat-raised-button (click)="modifyPatient()">Modificar</button>
+  </div>
+  <div class="box">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput value="" [(ngModel)]="patient.email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Age</mat-label>
+      <input type="number" matInput value="" [(ngModel)]="patient.age">
+    </mat-form-field>
+  </div>
+</div>

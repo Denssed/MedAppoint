@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -24,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
     MatStepperModule,
     MatInputModule,
     MatCardModule,
+    FormsModule
   ],
   imports: [CommonModule],
 })
