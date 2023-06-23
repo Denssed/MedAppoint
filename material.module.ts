@@ -11,6 +11,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [],
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     MatStepperModule,
     MatInputModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
   ],
   imports: [CommonModule],
 })
