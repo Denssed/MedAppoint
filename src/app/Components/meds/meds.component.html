@@ -1,1 +1,111 @@
-<app-nav-tab></app-nav-tab>
+<!-- formulario.component.html -->
+<h1 style="text-align: center;text-transform: uppercase;font-weight: bold; padding: 15px;">Registro de Personal médico</h1>
+<div class="contenedor__registromed">
+  <form (ngSubmit)="registrar()" #formulario="ngForm">
+    <tr>
+      <td>
+        <h4>Nombre</h4>
+        <mat-form-field>
+          <mat-label>Ingrese nombre</mat-label>
+          <input matInput [(ngModel)]="nombre" name="nombre" required>
+        </mat-form-field>
+      </td>
+   
+    <td>
+      <h4>Email</h4>
+      <mat-form-field>
+        <mat-label>Ingrese email</mat-label>
+        <input matInput [(ngModel)]="email" name="email" required email>
+      </mat-form-field>
+    </td>
+
+     <td>
+        <h4>Teléfono</h4>
+        <mat-form-field>
+          <mat-label>Ingrese Teléfono</mat-label>
+          <input matInput [(ngModel)]="telefono" name="telefono" required>
+        </mat-form-field>
+      </td>
+      <td>
+        <h4>Cédula</h4>
+        <mat-form-field>
+          <mat-label>Ingrese cédula</mat-label>
+          <input matInput [(ngModel)]="cedula" name="cédula" required>
+        </mat-form-field>
+      </td>
+      </tr> 
+      <tr>
+        <td>
+        
+            <h4>Especialidad</h4>
+            <mat-form-field>
+              <mat-label>Seleccione especialidad</mat-label>
+              <mat-select [(ngModel)]="especialidad" name="especialidad" required>
+                <mat-option value="medico_general">Médico General</mat-option>
+                <mat-option value="dermatologo">Dermatólogo</mat-option>                
+                <mat-option value="neurologo">Neurólogo</mat-option>
+                <mat-option value="psicologo">Psicólogo</mat-option>
+                <mat-option value="nefrologo">Nefrólogo</mat-option>
+                <mat-option value="urologo">urólogo</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <h4>Fecha</h4>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="fechaSeleccionada" name="fecha" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+          
+      </tr>
+  <br>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid">Registrar</button>
+</form>
+
+</div>
+
+<mat-table [dataSource]="datos" *ngIf="datos.data.length > 0">
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+    <mat-cell *matCellDef="let dato">{{ dato.nombre }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+    <mat-cell *matCellDef="let dato">{{ dato.email }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="telefono">
+    <mat-header-cell *matHeaderCellDef>Teléfono</mat-header-cell>
+    <mat-cell *matCellDef="let dato">{{ dato.telefono }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="cedula">
+    <mat-header-cell *matHeaderCellDef>cedula</mat-header-cell>
+    <mat-cell *matCellDef="let dato">{{ dato.cedula }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="especialidad">
+    <mat-header-cell *matHeaderCellDef>Especialidad</mat-header-cell>
+    <mat-cell *matCellDef="let dato">{{ dato.especialidad }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="fecha de nacimiento">
+    <mat-header-cell *matHeaderCellDef>Fecha de nacimiento</mat-header-cell>
+    <mat-cell *matCellDef="let dato">{{ dato.fecha | date }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="eliminar">
+    <mat-header-cell *matHeaderCellDef>Eliminar</mat-header-cell>
+    <mat-cell *matCellDef="let dato">
+      <button mat-icon-button color="warn" (click)="eliminarFila(dato)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+  
+  <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+  <mat-row *matRowDef="let fila; columns: columnas;"></mat-row>
+</mat-table>

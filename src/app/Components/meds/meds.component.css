@@ -1,0 +1,10 @@
+.contenedor__registromed {
+  padding: 25px;
+}
+  mat-form-field {
+    margin-bottom: 20px;
+  }
+  
+  mat-table {
+    margin-top: 20px;
+  }
