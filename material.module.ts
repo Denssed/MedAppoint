@@ -6,12 +6,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+
+
+
 
 @NgModule({
   declarations: [],
@@ -21,6 +25,7 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
+    MatSnackBarModule,
     MatListModule,
     MatFormFieldModule,
     MatStepperModule,

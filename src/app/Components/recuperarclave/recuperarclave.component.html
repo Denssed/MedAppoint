@@ -1,0 +1,22 @@
+<div class="contenedorlogin__imagen">
+    <img src="https://images.pexels.com/photos/8376232/pexels-photo-8376232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="imagen_logo">
+  </div>
+  <div class="contenedorlogin">
+    <div class="contenedorlogin__formulario">
+      <!---DISEÑO MATERIAL-->
+      <img src="https://drive.google.com/uc?export=download&id=1bEvbjUcGUZJ48Ul9sHekrDUkDUXJ2YpD">
+      <form>
+        <h1 class="contenedorlogin__titulo">Recuperar clave</h1> 
+        <mat-form-field>
+          <input matInput placeholder="# de cédula" pattern="[0-9]*" title="Ingrese solo valores numéricos" required>
+        </mat-form-field>
+        <br>
+       
+        <div>
+            <button mat-raised-button color="primary" class="botonformulario"  (click)="showSnackbar()">Enviar</button>
+
+        </div>
+        <br>  
+      </form>
+    </div>
+  </div>
