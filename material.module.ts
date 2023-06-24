@@ -19,8 +19,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
-import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -46,7 +44,6 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     MatStepperModule,
     FormsModule,
-    MatTableModule,
   ],
   imports: [CommonModule],
 })

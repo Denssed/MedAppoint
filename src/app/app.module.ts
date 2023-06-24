@@ -6,8 +6,8 @@ import {  FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material/card';
 import { NavigationComponent } from './Components/navigation/navigation.component';
+
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { UserComponent } from './Components/user/user.component';
@@ -17,10 +17,8 @@ import { ScheduleComponent } from './Components/schedule/schedule.component';
 import { MedsComponent } from './Components/meds/meds.component';
 import { NavTabComponent } from './Components/nav-tab/nav-tab.component';
 import { MaterialModule } from 'material.module';
-import { InputButtonComponent } from './Components/appoiment/speciality-card/input-button.component';
+import { InputButtonComponent } from './Components/appoiment/inpurt-button/input-button.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @NgModule({

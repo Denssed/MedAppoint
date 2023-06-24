@@ -10,7 +10,7 @@
           <input matInput [(ngModel)]="nombre" name="nombre" required>
         </mat-form-field>
       </td>
-   
+
     <td>
       <h4>Email</h4>
       <mat-form-field>
@@ -33,16 +33,16 @@
           <input matInput [(ngModel)]="cedula" name="cédula" required>
         </mat-form-field>
       </td>
-      </tr> 
+      </tr>
       <tr>
         <td>
-        
+
             <h4>Especialidad</h4>
             <mat-form-field>
               <mat-label>Seleccione especialidad</mat-label>
               <mat-select [(ngModel)]="especialidad" name="especialidad" required>
                 <mat-option value="medico_general">Médico General</mat-option>
-                <mat-option value="dermatologo">Dermatólogo</mat-option>                
+                <mat-option value="dermatologo">Dermatólogo</mat-option>
                 <mat-option value="neurologo">Neurólogo</mat-option>
                 <mat-option value="psicologo">Psicólogo</mat-option>
                 <mat-option value="nefrologo">Nefrólogo</mat-option>
@@ -54,12 +54,12 @@
           <td>
             <h4>Fecha</h4>
             <mat-form-field>
-              <input matInput [matDatepicker]="picker" [(ngModel)]="fechaSeleccionada" name="fecha" required>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="fechaSeleccionada" name="picker" required>
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </td>
-          
+
       </tr>
   <br>
 
@@ -93,7 +93,7 @@
     <mat-header-cell *matHeaderCellDef>Especialidad</mat-header-cell>
     <mat-cell *matCellDef="let dato">{{ dato.especialidad }}</mat-cell>
   </ng-container>
-  <ng-container matColumnDef="fecha de nacimiento">
+  <ng-container matColumnDef="fecha">
     <mat-header-cell *matHeaderCellDef>Fecha de nacimiento</mat-header-cell>
     <mat-cell *matCellDef="let dato">{{ dato.fecha | date }}</mat-cell>
   </ng-container>
@@ -105,7 +105,7 @@
       </button>
     </mat-cell>
   </ng-container>
-  
+
   <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
   <mat-row *matRowDef="let fila; columns: columnas;"></mat-row>
 </mat-table>
