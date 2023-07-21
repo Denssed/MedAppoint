@@ -17,7 +17,7 @@ import { ScheduleComponent } from './Components/schedule/schedule.component';
 import { MedsComponent } from './Components/meds/meds.component';
 import { NavTabComponent } from './Components/nav-tab/nav-tab.component';
 import { MaterialModule } from 'material.module';
-import { InputButtonComponent } from './Components/appoiment/inpurt-button/input-button.component';
+import { InputButtonComponent } from './Components/appoiment/input-button/input-button.component';
 
 
 
