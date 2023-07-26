@@ -13,6 +13,18 @@ interface Patient {
   role: string
 }
 
+interface User {
+  id: number,
+  ci: string,
+  name: string,
+  password: string,
+  surName: string,
+  email: string
+  age: number,
+  speciality_id: number,
+  role: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,6 +43,16 @@ export class UserService {
     })
   };
 
+  //Users
+  logUser = (login: any):Observable<User> => {
+    return this.http.post<User>(`${this.URL}/Login`, login);
+  }
+
+  getUsers = ():Observable<User[]> => {
+    return this.http.get<User[]>(`${this.URL}/User`);
+  }
+
+  //Patients
   getPatients = ():Observable<Patient[]> => {
     return this.http.get<Patient[]>(`${this.URL}/Patient`);
   }
