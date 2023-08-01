@@ -1,8 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/'
+import { Appoiment } from '../Components/types';
 
-interface Patient {
+interface User {
+  id: number,
+  cedula: string,
+  name: string,
+  password: string,
+  surName: string,
+  email: string
+  age: number
+  role: string
+}
+
+interface Med {
   id: number,
   cedula: string,
   name: string,
@@ -31,18 +43,29 @@ export class UserService {
     })
   };
 
-  getPatients = ():Observable<Patient[]> => {
-    return this.http.get<Patient[]>(`${this.URL}/Patient`);
+  getPatients = ():Observable<User[]> => {
+    return this.http.get<User[]>(`${this.URL}/Patient`);
+  }
+
+  getUser = (id: number): Observable<any> => {
+    return this.http.get<User>(`${this.URL}/Patient/${id}`)
   }
 
   getPatient = (id: number): Observable<any> => {
-    return this.http.get<Patient>(`${this.URL}/Patient/${id}`)
+    return this.http.get<User>(`${this.URL}/Patient/${id}`)
   }
 
   // AutenticateUser = (login:any):Observable<any> => {
   //   return this.http.post<any>(`${this.URL_DOCKER}/Login`, login)
   // }
 
+
+
+
+  //Appoiments
+  getAppoimentsByPatient = (id: number): Observable<Appoiment[]> => {
+    return this.http.get<Appoiment[]>(`${this.URL}/Appoiment/${id}`)
+  }
 
 }
 

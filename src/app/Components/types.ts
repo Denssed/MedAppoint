@@ -8,7 +8,7 @@ type Appoiment = {
   id: number | null,
   patientId: number | null,
   medId: number | null,
-  dateId: number | null,
+  date: string | null,
   specialityId: number | null,
   cost: number | null
 }

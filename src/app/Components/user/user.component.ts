@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._userService.getPatient(1).subscribe(patient => this.patient = patient)
+    this._userService.getUser(1).subscribe(patient => this.patient = patient)
     console.log(this.patient)
   }
 
