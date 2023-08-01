@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UserService } from 'src/app/Services/user.service';
 
 const ticktes = [
   {
@@ -39,14 +41,40 @@ const ticktes = [
   },
 ]
 
+interface Appoiment {
+  specialty: string,
+  med: number,
+  date: string,
+  cost: number
+}
+
 @Component({
   selector: 'app-ticket',
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.css']
 })
-export class TicketComponent {
+export class TicketComponent implements OnInit {
+
+  appoiments: any = []
+  appoint: any = []
+  dataSource: any = []
+
+  constructor(
+    private _userService: UserService
+  ) {}
+
+  ngOnInit(): void {
+    // this.api.getAppoimentsByPatient(localStorage)
+    this._userService.getAppoimentsByPatient(1)
+    .subscribe(appoiment => {
+      console.log(appoiment)
+      this.appoiments = appoiment
+      this.dataSource = this.appoiments;
+    })
+  console.log("appoiments",this.appoiments)
+
+  }
 
   displayedColumns: string[] = ['speciality', 'med', 'date', 'costo'];
-  dataSource = ticktes;
 
 }

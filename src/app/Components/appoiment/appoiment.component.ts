@@ -159,15 +159,15 @@ export class AppoimentComponent {
     id: 0,
     patientId: 0,
     medId: 0,
-    dateId: 0,
+    date: '',
     specialityId: 0,
     cost: 0
   }
 
-  date: Date | null = {
-    id: 0,
-    date: ""
-  }
+  // date: Date | null = {
+  //   id: 0,
+  //   date: ""
+  // }
 
   getSpeciality(speciality: Speciality): void {
     console.log("speciality", speciality)
@@ -185,10 +185,10 @@ export class AppoimentComponent {
   getschedule(day: any, hour: any): void {
     console.log("schedule", day, hour)
     // console.log(this.convertformat(day, hour))
-    this.date!.date = this.convertformat(day, hour)
-    this.appoiment!.dateId = this.date?.id!
-    this.date!.date = this.convertformat(day,hour)
-    console.log(this.date)
+    this.appoiment!.date = this.convertformat(day, hour)
+    // this.appoiment!.date = this.date?.id!
+    this.appoiment!.date = this.convertformat(day,hour)
+    // console.log(this.date)
     console.log("appoiment", this.appoiment)
   }
 
