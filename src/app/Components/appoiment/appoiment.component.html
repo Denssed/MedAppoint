@@ -38,17 +38,18 @@
       <div class="speciality-section">
         <p>Display Info</p>
         <p>
-          Id Medico: {{ appoiment!.medId }}
+          Id Medico: {{ appoiment!.med_id }}
         </p>
         <p>
           Costo de consulta: {{ appoiment!.cost }}
         </p>
         <p>
-          Fecha de consulta: {{ appoiment!.date }}
+          Fecha de consulta: {{ appoiment!.date_timeStamp }}
         </p>
       </div>
       <div>
         <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="submit()">Generar</button>
       </div>
     </mat-step>
   </mat-stepper>

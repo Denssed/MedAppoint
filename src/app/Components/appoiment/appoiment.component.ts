@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Speciality, Appoiment, Med, Date } from '../types';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-appoiment',
@@ -8,7 +9,7 @@ import { Speciality, Appoiment, Med, Date } from '../types';
 })
 export class AppoimentComponent {
 
-  constructor() {
+  constructor(private api:UserService) {
     let day = Date().split(' ')[2]
     console.log(day)
     let date = new Date();
@@ -155,12 +156,12 @@ export class AppoimentComponent {
 
   week: any = []
 
-  appoiment: Appoiment | null = {
+  appoiment: Appoiment = {
     id: 0,
-    patientId: 0,
-    medId: 0,
-    date: '',
-    specialityId: 0,
+    patient_id: 0,
+    med_id: 0,
+    date_timeStamp: '',
+    speciality_id: 0,
     cost: 0
   }
 
@@ -171,23 +172,23 @@ export class AppoimentComponent {
 
   getSpeciality(speciality: Speciality): void {
     console.log("speciality", speciality)
-    this.appoiment!.specialityId = speciality.id
+    this.appoiment!.speciality_id = speciality.id
     this.appoiment!.cost = speciality.cost
     console.log("appoiment", this.appoiment)
   }
 
   getMed(med: Med): void {
     console.log("med", med)
-    this.appoiment!.medId = med.id
+    this.appoiment!.med_id = med.id
     console.log("appoiment", this.appoiment)
   }
 
   getschedule(day: any, hour: any): void {
     console.log("schedule", day, hour)
     // console.log(this.convertformat(day, hour))
-    this.appoiment!.date = this.convertformat(day, hour)
+    this.appoiment!.date_timeStamp = this.convertformat(day, hour)
     // this.appoiment!.date = this.date?.id!
-    this.appoiment!.date = this.convertformat(day,hour)
+    this.appoiment!.date_timeStamp = this.convertformat(day,hour)
     // console.log(this.date)
     console.log("appoiment", this.appoiment)
   }
@@ -197,5 +198,21 @@ export class AppoimentComponent {
     var h_arr = hour.name.split(":");
     let form_dt = curr_dt.getFullYear() + "-" + (curr_dt.getMonth() + 1) + "-" + String(day) + " " + h_arr[0] + ":" + h_arr[1];
     return form_dt;
+  }
+
+  toTimestamp (strDate: any) {
+    return Date.parse(strDate)
+  }
+  submit(){
+    let date = this.toTimestamp(this.appoiment?.date_timeStamp)
+    console.log(date)
+    this.appoiment.date_timeStamp = date
+
+    console.log(this.appoiment)
+    this.api.postAppoiment(this.appoiment).subscribe(data => console.log(data))
+  //   let date = this.appoiment?.date
+  //   let myDate = date?.split("-");
+  //   let newDate = new Date( myDate[2], myDate[1] - 1, myDate[0]);
+  //   console.log(newDate.getTime());
   }
 }

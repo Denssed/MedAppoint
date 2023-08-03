@@ -6,10 +6,10 @@ type Speciality = {
 
 type Appoiment = {
   id: number | null,
-  patientId: number | null,
-  medId: number | null,
-  date: string | null,
-  specialityId: number | null,
+  patient_id: number | null,
+  med_id: number | null,
+  date_timeStamp: any,
+  speciality_id: number | null,
   cost: number | null
 }
 

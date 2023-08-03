@@ -43,7 +43,7 @@ export class UserService {
     })
   };
 
-  getPatients = ():Observable<User[]> => {
+  getUsers = ():Observable<User[]> => {
     return this.http.get<User[]>(`${this.URL}/Patient`);
   }
 
@@ -65,6 +65,10 @@ export class UserService {
   //Appoiments
   getAppoimentsByPatient = (id: number): Observable<Appoiment[]> => {
     return this.http.get<Appoiment[]>(`${this.URL}/Appoiment/${id}`)
+  }
+
+  postAppoiment = (appoiment: Appoiment): Observable<Appoiment> => {
+    return this.http.post<Appoiment>(`${this.URL}/Appoiment`, appoiment)
   }
 
 }
