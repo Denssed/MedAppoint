@@ -5,18 +5,16 @@
     <div class="contenedorlogin__formulario">
       <!---DISEÑO MATERIAL-->
       <img src="https://drive.google.com/uc?export=download&id=1bEvbjUcGUZJ48Ul9sHekrDUkDUXJ2YpD">
-      <form>
-        <h1 class="contenedorlogin__titulo">Recuperar clave</h1> 
-        <mat-form-field>
-          <input matInput placeholder="# de cédula" pattern="[0-9]*" title="Ingrese solo valores numéricos" required>
-        </mat-form-field>
+        <h1 class="contenedorlogin__titulo">Recuperar clave</h1>
+
+          <input type="text" matInput placeholder="example@gmail.com" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required>
+
         <br>
-       
+
         <div>
-            <button mat-raised-button color="primary" class="botonformulario"  (click)="showSnackbar()">Enviar</button>
+            <button mat-raised-button color="primary" class="botonformulario" (click)="onSubmit()">Enviar</button>
 
         </div>
-        <br>  
-      </form>
+        <br>
     </div>
   </div>

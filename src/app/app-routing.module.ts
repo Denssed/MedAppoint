@@ -8,10 +8,12 @@ import { TicketComponent } from './Components/ticket/ticket.component';
 import { ScheduleComponent } from './Components/schedule/schedule.component';
 import { MedsComponent } from './Components/meds/meds.component';
 import { NavigationComponent } from './Components/navigation/navigation.component';
+import { RecuperarclaveComponent } from './Components/recuperarclave/recuperarclave.component';
 
 const routes: Routes = [
   //General
   { path: 'login', component: LoginComponent },
+  { path: 'login/recuperar', component: RecuperarclaveComponent},
   //User
   {
     path: '',

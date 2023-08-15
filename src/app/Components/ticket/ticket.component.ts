@@ -58,14 +58,16 @@ export class TicketComponent implements OnInit {
   appoiments: any = []
   appoint: any = []
   dataSource: any = []
+  id: number = 0
 
   constructor(
     private _userService: UserService
   ) {}
 
   ngOnInit(): void {
+    this.id = parseInt(localStorage['id'])
     // this.api.getAppoimentsByPatient(localStorage)
-    this._userService.getAppoimentsByPatient(1)
+    this._userService.getAppoimentsByPatient(this.id)
     .subscribe(appoiment => {
       console.log(appoiment)
       this.appoiments = appoiment

@@ -16,8 +16,8 @@ export class MedsComponent {
   fechaSeleccionada: string='';
 
   datos: MatTableDataSource<any>;
-  columnas: string[] = ['nombre', 'email', 'telefono','cedula','especialidad','fecha','eliminar'];
-  
+  columnas: string[] = ['nombre', 'email', 'telefono','cedula','especialidad','eliminar'];
+
   constructor() {
     this.datos = new MatTableDataSource<any>([]);
   }
@@ -28,7 +28,7 @@ export class MedsComponent {
       this.datos._updateChangeSubscription();
     }
   }
-  
+
   registrar() {
     const nuevoDato = { nombre: this.nombre, email: this.email, telefono: this.telefono,cedula:this.cedula,especialidad: this.especialidad,fecha:this.fechaSeleccionada };
     this.datos.data.push(nuevoDato);
@@ -41,5 +41,5 @@ export class MedsComponent {
     this.fechaSeleccionada = '';
 
   }
-  
+
 }

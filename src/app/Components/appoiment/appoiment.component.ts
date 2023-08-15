@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Speciality, Appoiment, Med, Date } from '../types';
 import { UserService } from 'src/app/Services/user.service';
 
@@ -7,7 +7,7 @@ import { UserService } from 'src/app/Services/user.service';
   templateUrl: './appoiment.component.html',
   styleUrls: ['./appoiment.component.css'],
 })
-export class AppoimentComponent {
+export class AppoimentComponent implements OnInit {
 
   constructor(private api:UserService) {
     let day = Date().split(' ')[2]
@@ -36,99 +36,23 @@ export class AppoimentComponent {
       // this.week.push(this.days_mock[i]);
     }
 
-    console.log(this.week);
+    // console.log(this.week);
     // console.log(Date().split(' ')[0])
     // this.days_mock =
   }
+  ngOnInit(): void {
+    this.api.getSpecilities().subscribe(sp => {
+      this.speciality_mock = sp
+      console.log(sp)
+    })
+
+
+  }
 
   isLinear = true
-  test = { id: 1, name: 'test', cost: 200 };
+  speciality_mock = []
 
-  speciality_mock = [
-    {
-      id: 1,
-      name: 'test-1',
-      cost: 200
-    },
-    {
-      id: 2,
-      name: 'test-2',
-      cost: 200
-    },
-    {
-      id: 3,
-      name: 'test-3',
-      cost: 200
-    },
-    {
-      id: 4,
-      name: 'test-4',
-      cost: 200
-    },
-    {
-      id: 5,
-      name: 'test-5',
-      cost: 200
-    },
-    {
-      id: 6,
-      name: 'test-6',
-      cost: 200
-    },
-    {
-      id: 7,
-      name: 'test-7',
-      cost: 200
-    },
-    {
-      id: 8,
-      name: 'test-8',
-      cost: 200
-    },
-    {
-      id: 9,
-      name: 'test-9',
-      cost: 200
-    },
-    {
-      id: 10,
-      name: 'test-10',
-      cost: 200
-    },
-  ]
-
-  meds_mock = [
-    {
-      id: 1,
-      name: 'Andres',
-      surName: 'Campos',
-      specialityId: 1
-    },
-    {
-      id: 2,
-      name: 'Julian',
-      surName: 'Campos',
-      specialityId: 2
-    },
-    {
-      id: 3,
-      name: 'Andres-2',
-      surName: 'Campos',
-      specialityId: 3
-    },
-    {
-      id: 4,
-      name: 'Julian-2',
-      surName: 'Campos',
-      specialityId: 4
-    },
-    {
-      id: 5,
-      name: 'Adrian',
-      surName: 'Ramos',
-      specialityId: 5
-    },
-  ]
+  meds_mock:any[] = []
 
   hour_mock = [
     {
@@ -165,16 +89,12 @@ export class AppoimentComponent {
     cost: 0
   }
 
-  // date: Date | null = {
-  //   id: 0,
-  //   date: ""
-  // }
-
   getSpeciality(speciality: Speciality): void {
     console.log("speciality", speciality)
     this.appoiment!.speciality_id = speciality.id
-    this.appoiment!.cost = speciality.cost
+    this.appoiment!.cost = speciality.consult_cost
     console.log("appoiment", this.appoiment)
+    this.api.getMedsBySpecialiyId(speciality.id).subscribe(meds => this.meds_mock = meds)
   }
 
   getMed(med: Med): void {
@@ -203,6 +123,7 @@ export class AppoimentComponent {
   toTimestamp (strDate: any) {
     return Date.parse(strDate)
   }
+
   submit(){
     let date = this.toTimestamp(this.appoiment?.date_timeStamp)
     console.log(date)

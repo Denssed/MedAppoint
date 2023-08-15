@@ -1,7 +1,7 @@
 type Speciality = {
   id: number,
   name: string,
-  cost: number
+  consult_cost: number
 }
 
 type Appoiment = {
@@ -25,10 +25,22 @@ type Date = {
   date: string
 }
 
+interface User {
+  id: number,
+  cedula: string,
+  name: string,
+  password: string,
+  surName: string,
+  email: string,
+  age: number,
+  role: string
+}
+
 
 export {
   Speciality,
   Appoiment,
   Med,
-  Date
+  Date,
+  User
 };
