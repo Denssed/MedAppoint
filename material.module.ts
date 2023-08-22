@@ -19,6 +19,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -44,6 +45,7 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     MatStepperModule,
     FormsModule,
+    MatDialogModule,
   ],
   imports: [CommonModule],
 })

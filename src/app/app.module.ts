@@ -19,6 +19,7 @@ import { NavTabComponent } from './Components/nav-tab/nav-tab.component';
 import { MaterialModule } from 'material.module';
 import { InputButtonComponent } from './Components/appoiment/input-button/input-button.component';
 import { RecuperarclaveComponent } from './Components/recuperarclave/recuperarclave.component';
+import { PdfComponent } from './pdf/pdf.component';
 
 
 
@@ -34,8 +35,8 @@ import { RecuperarclaveComponent } from './Components/recuperarclave/recuperarcl
     ScheduleComponent,
     MedsComponent,
     NavTabComponent,
-    InputButtonComponent,
     RecuperarclaveComponent
+    PdfComponent
   ],
   imports: [
     BrowserModule,

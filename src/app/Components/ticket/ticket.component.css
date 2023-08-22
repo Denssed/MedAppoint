@@ -1,3 +1,11 @@
 table {
   width: 100%;
 }
+
+.botonticket{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}

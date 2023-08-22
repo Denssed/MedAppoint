@@ -13,7 +13,14 @@ interface User {
   age: number
   role: string
 }
-
+interface User {
+  id: number,
+  usuario: string,
+  password: string,
+  cedula: string,
+  role:string
+  
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -54,7 +61,14 @@ export class UserService {
   getPatient = (id: number): Observable<any> => {
     return this.http.get<User>(`${this.URL}/Patient/${id}`)
   }
+  getUsers = ():Observable<User[]> => {
+    return this.http.get<User[]>(`${this.URL}/Patient`);
+  }
 
+   getUser = (id: number): Observable<any> => {
+    return this.http.get<User>(`${this.URL}/user/${id}`)
+  }
+ 
   // AutenticateUser = (login:any):Observable<any> => {
   //   return this.http.post<any>(`${this.URL_DOCKER}/Login`, login)
   // }
