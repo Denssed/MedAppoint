@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs=pdfFonts.pdfMake.vfs;
 const ticktes = [
   {
     speciality: "Pediatria",
@@ -48,5 +50,34 @@ export class TicketComponent {
 
   displayedColumns: string[] = ['speciality', 'med', 'date', 'costo'];
   dataSource = ticktes;
-
+  createPDF1() {
+    const pdfDefinition = {
+      content: [
+        
+        { text: 'Reporte de Tickets', style: 'titulo' },
+        {
+          
+          table: {
+            widths: ['auto', '*', 'auto', 'auto'], // Define los anchos de las columnas
+            body: [
+              ['Especialidad', 'Médico', 'Fecha', 'Costo'],
+              ...ticktes.map(ticket => [ticket.speciality, ticket.med, ticket.date, ticket.costo]) // Agregar filas de datos
+            ],
+          },
+        },
+      ],
+      styles: {
+        titulo: {
+            fontSize: 24,
+            bold: true,
+            alignment: 'center',
+            margin: [0, 0, 0, 10], // Margen inferior
+        },
+    },
+    };
+  
+    const pdf = pdfMake.createPdf(pdfDefinition);
+    pdf.open();
+  }
+  
 }

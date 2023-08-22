@@ -1,11 +1,8 @@
-*{
-  margin: 0;
-  padding: 0;
-}
 .contenedorlogin {
   display: flex;
   align-items: center; 
-  justify-content: center;   
+  justify-content: center; 
+  
 }
 .contenedorlogin__imagen {
   float: left;
@@ -37,14 +34,3 @@ input.example-right-align {
 .botonformulario{
   margin: 10px;
 }
-.imagen_logo{
-  width:850px;
-  height:600px;
-}
-/*Versión móvil login*/
-@media screen and (max-width: 767px) {
-  .imagen_logo{
-    display: none;
-  }
- 
-  }    

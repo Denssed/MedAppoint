@@ -18,6 +18,7 @@ import { MedsComponent } from './Components/meds/meds.component';
 import { NavTabComponent } from './Components/nav-tab/nav-tab.component';
 import { MaterialModule } from 'material.module';
 import { InputButtonComponent } from './Components/appoiment/input-button/input-button.component';
+import { PdfComponent } from './pdf/pdf.component';
 
 
 
@@ -33,7 +34,8 @@ import { InputButtonComponent } from './Components/appoiment/input-button/input-
     ScheduleComponent,
     MedsComponent,
     NavTabComponent,
-    InputButtonComponent
+    InputButtonComponent,
+    PdfComponent
   ],
   imports: [
     BrowserModule,
