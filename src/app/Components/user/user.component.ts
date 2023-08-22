@@ -1,6 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
 import { UserService } from 'src/app/Services/user.service';
-import { User,} from '../types';
+import { User } from '../types';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +11,7 @@ export class UserComponent implements OnInit {
 
   id: number = 0
 
-  patient: User = {
+   patient: User = {
     id: 0,
     cedula: '',
     name: '',

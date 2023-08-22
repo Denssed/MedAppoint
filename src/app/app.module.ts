@@ -35,8 +35,9 @@ import { PdfComponent } from './pdf/pdf.component';
     ScheduleComponent,
     MedsComponent,
     NavTabComponent,
-    RecuperarclaveComponent
-    PdfComponent
+    RecuperarclaveComponent,
+    PdfComponent,
+    InputButtonComponent
   ],
   imports: [
     BrowserModule,

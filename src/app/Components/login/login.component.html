@@ -1,27 +1,29 @@
-<div *ngIf="alert" class="alert alert-danger alert-dismissible" role="alert" data-auto-dismiss>
-  <strong>Acceso incorrecto!</strong> Verificar el usuario y/o la contraseña.
-</div>
-<div class="contenedorlogin">
-  <div class="contenedorlogin__formulario">
-    <!---DISEÑO MATERIAL-->
-    <img src="https://drive.google.com/uc?export=download&id=1bEvbjUcGUZJ48Ul9sHekrDUkDUXJ2YpD">
-    <div *ngIf="alert" class="alert alert-danger alert-dismissible" role="alert" data-auto-dismiss>
-      <strong>Acceso incorrecto!</strong> Verificar el usuario y/o la contraseña.
-    </div>
-    <form [formGroup]="usuarioLogin" (ngSubmit)="onSubmit()">
-      <h1 class="contenedorlogin__titulo">Iniciar sesión</h1>
-      <mat-form-field>
-        <input matInput placeholder="Email"  title="Ingrese Email" required formControlName="Email">
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input matInput type="password" placeholder="Contraseña" required formControlName="Password">
-      </mat-form-field>
-      <div>
-        <button mat-raised-button color="primary" class="botonformulario" [disabled] = "!usuarioLogin.valid">Acceder</button>
+<div class="container">
+  <div class="contenedorlogin__imagen">
+    <img src="https://images.pexels.com/photos/8376232/pexels-photo-8376232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="imagen_logo">
+  </div>
+  <div class="contenedorlogin">
+    <div class="contenedorlogin__formulario">
+      <!---DISEÑO MATERIAL-->
+      <img src="https://drive.google.com/uc?export=download&id=1bEvbjUcGUZJ48Ul9sHekrDUkDUXJ2YpD">
+      <div *ngIf="alert" class="alert alert-danger alert-dismissible" role="alert" data-auto-dismiss>
+        <strong>Acceso incorrecto!</strong> Verificar el usuario y/o la contraseña.
       </div>
-      <br>
-    </form>
-    <button mat-raised-button color="primary" routerLink="recuperar">Recuperar clave</button>
+      <form [formGroup]="usuarioLogin" (ngSubmit)="onSubmit()">
+        <h1 class="contenedorlogin__titulo">Iniciar sesión</h1>
+        <mat-form-field>
+          <input matInput placeholder="Email"  title="Ingrese Email" required formControlName="Email">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Contraseña" required formControlName="Password">
+        </mat-form-field>
+        <div>
+          <button mat-raised-button color="primary" class="botonformulario" [disabled] = "!usuarioLogin.valid">Acceder</button>
+        </div>
+        <br>
+      </form>
+      <button mat-raised-button color="primary" routerLink="recuperar">Recuperar clave</button>
+    </div>
   </div>
 </div>

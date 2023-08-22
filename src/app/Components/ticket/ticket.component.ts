@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/Services/user.service';
 
-import pdfMake from 'pdfmake/build/pdfmake';
-import pdfFonts from 'pdfmake/build/vfs_fonts';
+import pdfMake from 'pdfmake/build/pdfmake.js';
+import pdfFonts from 'pdfmake/build/vfs_fonts.js';
 pdfMake.vfs=pdfFonts.pdfMake.vfs;
 const ticktes = [
   {
@@ -84,10 +84,10 @@ export class TicketComponent implements OnInit {
   createPDF1() {
     const pdfDefinition = {
       content: [
-        
+
         { text: 'Reporte de Tickets', style: 'titulo' },
         {
-          
+
           table: {
             widths: ['auto', '*', 'auto', 'auto'], // Define los anchos de las columnas
             body: [
@@ -106,9 +106,9 @@ export class TicketComponent implements OnInit {
         },
     },
     };
-  
+
     const pdf = pdfMake.createPdf(pdfDefinition);
     pdf.open();
   }
-  
+
 }

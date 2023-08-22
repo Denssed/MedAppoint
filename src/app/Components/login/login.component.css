@@ -1,8 +1,13 @@
+
+.container{
+  display: flex;
+  gap: 30px;
+}
+
 .contenedorlogin {
   display: flex;
-  align-items: center; 
-  justify-content: center; 
-  
+  align-items: center;
+  justify-content: center;
 }
 .contenedorlogin__imagen {
   float: left;
@@ -12,7 +17,7 @@
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
- 
+
 }
 /**material */
 .example-container mat-form-field + mat-form-field {
@@ -34,3 +39,14 @@ input.example-right-align {
 .botonformulario{
   margin: 10px;
 }
+.imagen_logo{
+  width:850px;
+  height:600px;
+}
+/*Versión móvil login*/
+@media screen and (max-width: 767px) {
+  .imagen_logo{
+    display: none;
+  }
+
+  }

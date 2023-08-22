@@ -25,7 +25,7 @@ type Date = {
   date: string
 }
 
-interface User {
+type User = {
   id: number,
   cedula: string,
   name: string,

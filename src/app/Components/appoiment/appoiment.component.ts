@@ -109,7 +109,7 @@ export class AppoimentComponent implements OnInit {
     this.appoiment!.date_timeStamp = this.convertformat(day, hour)
     // this.appoiment!.date = this.date?.id!
     this.appoiment!.date_timeStamp = this.convertformat(day,hour)
-    // console.log(this.date)
+    console.log(this.appoiment!.date_timeStamp)
     console.log("appoiment", this.appoiment)
   }
 
@@ -121,12 +121,16 @@ export class AppoimentComponent implements OnInit {
   }
 
   toTimestamp (strDate: any) {
-    return Date.parse(strDate)
+    let numb = Date.parse(strDate).toString()
+    let date =  numb.slice(0, -3)
+    console.log(date)
+    return date
   }
 
   submit(){
     let date = this.toTimestamp(this.appoiment?.date_timeStamp)
-    console.log(date)
+    // console.log(date)
+    this.appoiment.patient_id = parseInt(localStorage['id'])
     this.appoiment.date_timeStamp = date
 
     console.log(this.appoiment)
